@@ -1,17 +1,36 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <!-- <HelloWorld msg="perro bambaro"></HelloWorld>
+  <input type="text" name="" v-model="nombre">
+  <p>{{ saludar }}</p>
+  <form-data></form-data> -->
+  <suspense>
+    <template #default>
+        <Pokemones></Pokemones>
+    </template>
+    <template #fallback>
+        Loading...
+    </template>
+</suspense>
 </template>
 
-<script>
-import HelloWorld from './components/HelloWorld.vue'
+<script setup>
+// import { ref } from '@vue/reactivity'
+// import { computed } from '@vue/runtime-core';
+// import HelloWorld from './components/HelloWorld.vue';
+// import FormData from './components/FormData.vue';
+import Pokemones from './components/Pokemones.vue';
 
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+// export default {
+//   name: 'App',
+//   components: {
+//     HelloWorld
+//   }
+// }
+
+  // const nombre = ref('');
+  // const saludar = computed( () => {
+  //   return !nombre.value.trim() ? 'Invitado' : nombre.value;
+  // })
 </script>
 
 <style>
